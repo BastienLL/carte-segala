@@ -3,86 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bastien Megnan – Carte de visite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <title>Bastien MEGNAN - Carte de visite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #0B5394;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .card {
-      background: #fff;
+      background-color: #f2f2f2;
       color: #333;
-      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background-color: white;
+      border-radius: 16px;
       padding: 30px;
-      max-width: 400px;
+      max-width: 420px;
       width: 100%;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
+
     .logo {
-      width: 90px;
-      margin-bottom: 15px;
-    }
-    .photo {
       width: 120px;
-      height: 120px;
-      object-fit: cover;
+      margin: 0 auto 20px;
+    }
+
+    .photo {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      border: 3px solid #0B5394;
-      margin-bottom: 15px;
-    }
-    h1 {
-      margin: 10px 0 5px;
-      font-size: 22px;
-    }
-    h2 {
-      margin: 0 0 15px;
-      font-size: 16px;
-      color: #0B5394;
-    }
-    .info {
-      font-size: 14px;
+      object-fit: cover;
+      border: 4px solid #0B5394;
       margin-bottom: 20px;
     }
-    .btns a {
-      display: block;
-      margin: 10px auto;
-      padding: 12px 18px;
-      background-color: #0B5394;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-      max-width: 220px;
-      transition: background-color 0.3s ease;
+
+    h1 {
+      font-size: 22px;
+      margin: 0;
+      font-weight: 600;
     }
-    .btns a:hover {
-      background-color: #08457a;
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
-    <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Bastien Megnan" class="photo">
-    <h1>Bastien MEGNAN</h1>
-    <h2>Gérant – Segala Diagnostics</h2>
-    <div class="info">
-      📍 5 Rue Edouard Herriot, 81400 Carmaux<br>
-      📞 <a href="tel:+33661916871" style="color:#0B5394; text-decoration: none;">06 61 91 68 71</a><br>
-      ✉️ <a href="mailto:contact@segaladiag.com" style="color:#0B5394; text-decoration: none;">contact@segaladiag.com</a>
-    </div>
-    <div class="btns">
-      <a href="./bastien-megnan.vcf" download>📇 Ajouter le contact</a>
-      <a href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">🌐 Visiter le site</a>
-    </div>
-  </div>
-</body>
-</html>
+
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 6px 0 20px;
+      color: #66
