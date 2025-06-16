@@ -11,10 +11,10 @@
       font-family: 'Poppins', sans-serif;
       background-color: #0B5394;
       color: #333;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       padding: 40px 20px;
       position: relative;
     }
@@ -27,12 +27,13 @@
       width: 100%;
       box-shadow: 0 0 0 3px rgba(0, 84, 139, 0.15);
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
       width: 160px;
-      margin: 0 auto 25px;
-      display: block;
+      margin-bottom: 25px;
     }
 
     .photo {
@@ -60,6 +61,7 @@
 
     .btn {
       display: block;
+      max-width: 320px;
       width: 100%;
       background-color: #0B5394;
       color: white;
@@ -67,7 +69,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      margin: 12px 0;
+      margin: 12px auto 0;
       transition: background-color 0.3s ease;
     }
 
@@ -94,7 +96,6 @@
     .contact-line img {
       width: 20px;
       margin-right: 10px;
-      flex-shrink: 0;
     }
 
     .contact-line a {
@@ -115,7 +116,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      z-index: 1000;
+      z-index: 10;
     }
 
     .floating-buttons a {
@@ -140,9 +141,82 @@
       width: 24px;
       height: 24px;
     }
+
+    /* POP-UP */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    .popup-box {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 16px;
+      text-align: center;
+      width: 90%;
+      max-width: 360px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .popup-box h3 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .popup-box a,
+    .popup-box button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .popup-box a {
+      background-color: #0B5394;
+      color: white;
+      text-decoration: none;
+    }
+
+    .popup-box button {
+      background-color: #e0e0e0;
+      color: #0B5394;
+    }
+
+    .popup-box a:hover {
+      background-color: #093e72;
+    }
+
+    .popup-box button:hover {
+      background-color: #d2d2d2;
+    }
   </style>
 </head>
 <body>
+
+  <!-- POP-UP -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h3>Bienvenue !</h3>
+      <a href="./bastien-megnan.vcf" download>📇 Ajouter au répertoire</a>
+      <button onclick="closePopup()">Voir la carte de visite →</button>
+    </div>
+  </div>
 
   <!-- Boutons flottants -->
   <div class="floating-buttons">
@@ -154,6 +228,7 @@
     </a>
   </div>
 
+  <!-- Carte principale -->
   <div class="card">
     <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
     <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Photo de Bastien Megnan" class="photo">
@@ -176,7 +251,6 @@
       </div>
     </div>
 
-    <!-- Nouveau bouton sous les liens -->
     <a class="btn" href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">🌐 Accéder au site</a>
   </div>
 
@@ -191,6 +265,10 @@
       } else {
         alert("Le partage n'est pas pris en charge sur ce navigateur.");
       }
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
     }
   </script>
 
