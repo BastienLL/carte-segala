@@ -12,26 +12,26 @@
       background-color: #00a5df;
       color: #333;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
       padding: 40px 20px;
-    }
-
-    .logo {
-      width: 160px;
-      margin-bottom: 20px;
     }
 
     .card {
       background-color: #fff;
       border-radius: 16px;
-      padding: 30px;
+      padding: 30px 20px;
       max-width: 420px;
       width: 100%;
       box-shadow: 0 0 0 3px rgba(0, 84, 139, 0.15);
       text-align: center;
+    }
+
+    .logo {
+      width: 160px;
+      margin: 0 auto 25px;
+      display: block;
     }
 
     .photo {
@@ -75,25 +75,32 @@
     }
 
     .contact-info {
-      text-align: left;
       margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .contact-line {
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       margin: 10px 0;
+      width: 100%;
+      max-width: 320px;
     }
 
     .contact-line img {
       width: 20px;
       margin-right: 10px;
+      flex-shrink: 0;
     }
 
     .contact-line a {
       color: #0B5394;
       text-decoration: none;
       font-weight: 500;
+      text-align: left;
     }
 
     .contact-line a:hover {
@@ -103,9 +110,8 @@
 </head>
 <body>
 
-  <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
-
   <div class="card">
+    <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
     <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Photo de Bastien Megnan" class="photo">
 
     <h1>Bastien MEGNAN</h1>
