@@ -68,6 +68,131 @@
       text-decoration: none;
       font-weight: 600;
       margin: 12px 0;
-      transition: bac
+      transition: background-color 0.3s ease;
+    }
 
-    
+    .btn:hover {
+      background-color: #093e72;
+    }
+
+    .contact-info {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .contact-line img {
+      width: 20px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .contact-line a {
+      color: #0B5394;
+      text-decoration: none;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .floating-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .floating-buttons a {
+      background-color: #fff;
+      border: 2px solid #0B5394;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .floating-buttons a:hover {
+      background-color: #e6f0f7;
+    }
+
+    .floating-buttons img {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Boutons flottants -->
+  <div class="floating-buttons">
+    <a href="./bastien-megnan.vcf" download title="Ajouter aux contacts">
+      <img src="https://img.icons8.com/ios-filled/50/0B5394/add-user-group-man-man.png" alt="Ajouter contact">
+    </a>
+    <a href="#" onclick="shareContact()" title="Partager ce contact">
+      <img src="https://img.icons8.com/ios-filled/50/0B5394/share-2.png" alt="Partager">
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
+    <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Photo de Bastien Megnan" class="photo">
+
+    <h1>Bastien MEGNAN</h1>
+    <h2>Gérant – Segala Diagnostics</h2>
+
+    <div class="contact-info">
+      <div class="contact-line">
+        <img src="https://img.icons8.com/ios-filled/50/0B5394/phone.png" alt="Téléphone">
+        <a href="tel:+33661916871">06 61 91 68 71</a>
+      </div>
+      <div class="contact-line">
+        <img src="https://img.icons8.com/ios-filled/50/0B5394/new-post.png" alt="Email">
+        <a href="mailto:contact@segaladiag.com">contact@segaladiag.com</a>
+      </div>
+      <div class="contact-line">
+        <img src="https://img.icons8.com/ios-filled/50/0B5394/domain.png" alt="Site">
+        <a href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">segala-diagnostics-immobiliers.fr</a>
+      </div>
+    </div>
+
+    <!-- Nouveau bouton sous les liens -->
+    <a class="btn" href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">🌐 Accéder au site</a>
+  </div>
+
+  <script>
+    function shareContact() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Segala Diagnostics – Bastien MEGNAN',
+          text: 'Voici ma carte de visite numérique.',
+          url: window.location.href
+        }).catch((error) => console.log('Partage annulé ou échoué', error));
+      } else {
+        alert("Le partage n'est pas pris en charge sur ce navigateur.");
+      }
+    }
+  </script>
+
+</body>
+</html>
