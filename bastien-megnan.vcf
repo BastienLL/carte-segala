@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Megnan;Bastien;;;
+FN:Bastien MEGNAN
+ORG:Segala Diagnostics
+TITLE:Gérant
+TEL;TYPE=CELL:+33 6 61 91 68 71
+EMAIL;TYPE=INTERNET:contact@segaladiag.com
+URL:https://segala-diagnostics-immobiliers.fr
+ADR;TYPE=WORK:;;5 Rue Edouard Herriot;Carmaux;;81400;France
+END:VCARD
