@@ -16,7 +16,6 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
-      position: relative;
     }
 
     .card {
@@ -33,7 +32,8 @@
 
     .logo {
       width: 160px;
-      margin-bottom: 25px;
+      margin: 0 auto 25px;
+      display: block;
     }
 
     .photo {
@@ -142,83 +142,66 @@
       height: 24px;
     }
 
-    /* POP-UP */
+    /* POPUP */
     .popup-overlay {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(8px);
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 10000;
+      z-index: 100;
     }
 
-    .popup-box {
-      background: #fff;
+    .popup {
+      background-color: white;
       padding: 30px 20px;
       border-radius: 16px;
       text-align: center;
+      max-width: 320px;
       width: 90%;
-      max-width: 360px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
-    .popup-box h3 {
+    .popup h3 {
       margin-bottom: 20px;
-      font-size: 20px;
-    }
-
-    .popup-box a,
-    .popup-box button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .popup-box a {
-      background-color: #0B5394;
-      color: white;
-      text-decoration: none;
-    }
-
-    .popup-box button {
-      background-color: #e0e0e0;
       color: #0B5394;
     }
 
-    .popup-box a:hover {
-      background-color: #093e72;
+    .popup-btn {
+      display: block;
+      width: 100%;
+      background-color: #0B5394;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 10px 0;
+      transition: background-color 0.3s ease;
     }
 
-    .popup-box button:hover {
-      background-color: #d2d2d2;
+    .popup-btn:hover {
+      background-color: #093e72;
     }
   </style>
 </head>
 <body>
 
-  <!-- POP-UP -->
+  <!-- POP-UP À L’ARRIVÉE -->
   <div class="popup-overlay" id="popup">
-    <div class="popup-box">
+    <div class="popup">
       <h3>Bienvenue !</h3>
-      <a href="./bastien-megnan.vcf" download>📇 Ajouter au répertoire</a>
-      <button onclick="closePopup()">Voir la carte de visite →</button>
+      <a href="./bastien-megnan.vcf" download class="popup-btn">📇 Ajouter au répertoire</a>
+      <a href="#" class="popup-btn" onclick="closePopup()">Voir la carte de visite →</a>
     </div>
   </div>
 
-  <!-- Boutons flottants -->
+  <!-- BOUTONS FLOTTANTS -->
   <div class="floating-buttons">
     <a href="./bastien-megnan.vcf" download title="Ajouter aux contacts">
       <img src="https://img.icons8.com/ios-filled/50/0B5394/add-user-group-man-man.png" alt="Ajouter contact">
@@ -228,7 +211,7 @@
     </a>
   </div>
 
-  <!-- Carte principale -->
+  <!-- CARTE -->
   <div class="card">
     <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
     <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Photo de Bastien Megnan" class="photo">
@@ -255,6 +238,10 @@
   </div>
 
   <script>
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
     function shareContact() {
       if (navigator.share) {
         navigator.share({
@@ -265,10 +252,6 @@
       } else {
         alert("Le partage n'est pas pris en charge sur ce navigateur.");
       }
-    }
-
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
     }
   </script>
 
