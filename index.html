@@ -19,41 +19,41 @@
       padding: 40px 20px;
     }
 
-    .container {
+    .logo {
+      width: 160px;
+      margin-bottom: 20px;
+    }
+
+    .card {
       background-color: #fff;
       border-radius: 16px;
       padding: 30px;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 0 0 3px rgba(0, 84, 139, 0.15); /* bordure bleue transparente */
+      box-shadow: 0 0 0 3px rgba(0, 84, 139, 0.15);
       text-align: center;
     }
 
-    .logo {
-      width: 120px;
-      margin: 0 auto 20px;
-    }
-
     .photo {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       aspect-ratio: 1 / 1;
-      border: 4px solid rgba(11, 83, 148, 0.8); /* bleu semi-transparent */
+      border: 4px solid rgba(11, 83, 148, 0.8);
       margin-bottom: 20px;
     }
 
     h1 {
       font-size: 22px;
-      margin: 0;
+      margin: 10px 0 5px;
       font-weight: 600;
     }
 
     h2 {
       font-size: 16px;
       font-weight: 400;
-      margin: 6px 0 20px;
+      margin: 0 0 20px;
       color: #666;
     }
 
@@ -66,7 +66,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      margin: 10px 0;
+      margin: 12px 0;
       transition: background-color 0.3s ease;
     }
 
@@ -74,37 +74,61 @@
       background-color: #093e72;
     }
 
-    .links {
+    .contact-info {
+      text-align: left;
+      margin-top: 25px;
+    }
+
+    .contact-line {
       display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
+      align-items: center;
+      margin: 10px 0;
     }
 
-    .links a {
+    .contact-line img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .contact-line a {
       color: #0B5394;
-      font-weight: 500;
       text-decoration: none;
+      font-weight: 500;
     }
 
-    .links a:hover {
+    .contact-line a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
+
+  <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
+
+  <div class="card">
     <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Photo de Bastien Megnan" class="photo">
+
     <h1>Bastien MEGNAN</h1>
     <h2>Gérant – Segala Diagnostics</h2>
 
     <a class="btn" href="./bastien-megnan.vcf" download>📇 Ajouter aux contacts</a>
     <a class="btn" href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">🌐 Accéder au site</a>
 
-    <div class="links">
-      <a href="tel:+33661916871">📞 Appeler</a>
-      <a href="mailto:contact@segaladiag.com">✉️ E-mail</a>
+    <div class="contact-info">
+      <div class="contact-line">
+        <img src="https://img.icons8.com/ios-filled/50/0B5394/phone.png" alt="Téléphone">
+        <a href="tel:+33661916871">06 61 91 68 71</a>
+      </div>
+      <div class="contact-line">
+        <img src="https://img.icons8.com/ios-filled/50/0B5394/new-post.png" alt="Email">
+        <a href="mailto:contact@segaladiag.com">contact@segaladiag.com</a>
+      </div>
+      <div class="contact-line">
+        <img src="https://img.icons8.com/ios-filled/50/0B5394/domain.png" alt="Site">
+        <a href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">segala-diagnostics-immobiliers.fr</a>
+      </div>
     </div>
   </div>
+
 </body>
 </html>
