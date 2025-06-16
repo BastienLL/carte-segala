@@ -11,10 +11,6 @@
       font-family: 'Poppins', sans-serif;
       background-color: #0B5394;
       color: #333;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 40px 20px;
     }
 
@@ -23,15 +19,13 @@
       border-radius: 16px;
       padding: 30px 20px;
       max-width: 420px;
-      width: 100%;
+      margin: auto;
       box-shadow: 0 0 0 3px rgba(0, 84, 139, 0.15);
       text-align: center;
-      position: relative;
-      z-index: 1;
     }
 
     .logo {
-      width: 160px;
+      width: 180px;
       margin: 0 auto 25px;
       display: block;
     }
@@ -109,40 +103,30 @@
       text-decoration: underline;
     }
 
-    .floating-buttons {
-      position: fixed;
-      right: 20px;
-      bottom: 100px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 10;
+    .section-title {
+      font-size: 18px;
+      margin: 30px 0 10px;
+      color: #0B5394;
+      font-weight: 600;
     }
 
-    .floating-buttons a {
-      background-color: #fff;
-      border: 2px solid #0B5394;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
+    .certification img {
+      width: 120px;
+      margin-top: 10px;
+    }
+
+    .services {
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease;
+      gap: 20px;
+      margin-top: 15px;
     }
 
-    .floating-buttons a:hover {
-      background-color: #e6f0f7;
+    .services img {
+      width: 50px;
+      height: 50px;
     }
 
-    .floating-buttons img {
-      width: 24px;
-      height: 24px;
-    }
-
-    /* POPUP */
     .popup-overlay {
       position: fixed;
       top: 0;
@@ -181,27 +165,60 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      margin: 10px 0;
+      margin: 10px auto;
       transition: background-color 0.3s ease;
     }
 
     .popup-btn:hover {
       background-color: #093e72;
     }
+
+    .floating-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 10;
+    }
+
+    .floating-buttons a {
+      background-color: #fff;
+      border: 2px solid #0B5394;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+
+    .floating-buttons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .floating-buttons a:hover {
+      background-color: #e6f0f7;
+    }
   </style>
 </head>
 <body>
 
-  <!-- POP-UP À L’ARRIVÉE -->
-  <div class="popup-overlay" id="popup">
+  <!-- Pop-up -->
+  <div class="popup-overlay" id="popup" onclick="closePopup(event)">
     <div class="popup">
       <h3>Bienvenue !</h3>
       <a href="./bastien-megnan.vcf" download class="popup-btn">📇 Ajouter au répertoire</a>
-      <a href="#" class="popup-btn" onclick="closePopup()">Voir la carte de visite →</a>
+      <a href="#" class="popup-btn" onclick="closePopup(event)">Voir la carte de visite →</a>
     </div>
   </div>
 
-  <!-- BOUTONS FLOTTANTS -->
+  <!-- Boutons flottants -->
   <div class="floating-buttons">
     <a href="./bastien-megnan.vcf" download title="Ajouter aux contacts">
       <img src="https://img.icons8.com/ios-filled/50/0B5394/add-user-group-man-man.png" alt="Ajouter contact">
@@ -211,7 +228,7 @@
     </a>
   </div>
 
-  <!-- CARTE -->
+  <!-- Carte -->
   <div class="card">
     <img src="https://i.imgur.com/J9h2Wxv.png" alt="Logo Segala Diagnostics" class="logo">
     <img src="https://i.imgur.com/MxQdDZc.jpg" alt="Photo de Bastien Megnan" class="photo">
@@ -235,11 +252,26 @@
     </div>
 
     <a class="btn" href="https://segala-diagnostics-immobiliers.fr/?utm_source=gmb" target="_blank">🌐 Accéder au site</a>
+
+    <!-- Certifications -->
+    <div class="section-title">Mes certifications</div>
+    <div class="certification">
+      <img src="https://i.imgur.com/IbLSzR9.png" alt="Abcidia Certification">
+    </div>
+
+    <!-- Services -->
+    <div class="section-title">Mes services</div>
+    <div class="services">
+      <img src="https://img.icons8.com/color/96/inspection.png" alt="Diagnostic 1">
+      <img src="https://img.icons8.com/color/96/document--v1.png" alt="Diagnostic 2">
+    </div>
   </div>
 
   <script>
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
+    function closePopup(event) {
+      if (event.target.id === "popup" || event.target.classList.contains("popup-btn")) {
+        document.getElementById("popup").style.display = 'none';
+      }
     }
 
     function shareContact() {
